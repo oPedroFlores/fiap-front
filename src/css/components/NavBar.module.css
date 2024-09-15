@@ -1,6 +1,40 @@
+@import './colors.css';
+
 .navBar {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  position: relative;
   padding: 20px;
-  background-color: beige;
+  background-color: var(--dark-pink);
+  color: var(--white);
+}
+
+.logo-blog {
+  border-radius: 4px;
+}
+
+.link-container {
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+}
+
+.link-container a {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.link-container a:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.login-link {
+  position: absolute;
+  right: 20px;
+}
+
+.login-icon {
+  border-radius: 50%;
 }
