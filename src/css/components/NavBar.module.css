@@ -1,12 +1,15 @@
-@import './colors.css';
-
 .navBar {
   display: flex;
   align-items: center;
-  position: relative;
-  padding: 20px;
-  background-color: var(--dark-pink);
+  justify-content: space-around;
+  padding: 15px 30px;
+  background-color: var(--mainDarkBlue);
   color: var(--white);
+}
+
+.navBar > div {
+  display: flex;
+  align-items: center;
 }
 
 .logo-blog {
@@ -15,26 +18,65 @@
 
 .link-container {
   display: flex;
-  gap: 20px;
-  padding-left: 30px;
+  gap: 25px;
+  margin-left: 20px;
 }
 
 .link-container a {
-  color: white;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+  color: var(--white);
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .link-container a:hover {
-  font-weight: bold;
-  transform: scale(1.1);
+  color: var(--mainLightGreen);
 }
 
 .login-link {
-  position: absolute;
-  right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .login-icon {
   border-radius: 50%;
+  border: 2px solid var(--white);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.login-icon:hover {
+  transform: scale(1.05);
+  border-color: var(--mainLightGreen);
+}
+
+/* Div de usuário logado */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+}
+
+.user-info p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.user-info span {
+  font-weight: bold;
+  color: var(--mainLightGreen);
+}
+
+.logout-button {
+  padding: 8px 16px;
+  background-color: var(--mainLightGreen);
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--white);
+  color: var(--mainLightGreen);
 }

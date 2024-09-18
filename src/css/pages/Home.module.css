@@ -1,0 +1,156 @@
+.home {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.home h2 {
+  font-size: 32px;
+  color: var(--mainDarkBlue);
+  margin-bottom: 10px;
+}
+
+.home p {
+  font-size: 18px;
+  color: var(--mainGray);
+  margin-bottom: 20px;
+}
+
+.postsWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.post {
+  background-color: var(--white);
+  border: 1px solid var(--lightGray);
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1 1 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .post {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.post::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--mainBlue), var(--mainLightGreen));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.post:hover::before {
+  opacity: 1;
+  z-index: -1;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: var(--mainLightGreen);
+}
+
+.postImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.postContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.postContent h3 {
+  font-size: 24px;
+  color: var(--mainBlue);
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+.postContent p {
+  font-size: 16px;
+  color: var(--mainPurple);
+  margin-bottom: 15px;
+  line-height: 1.6;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+}
+
+.postContent small {
+  font-size: 14px;
+  color: var(--mainGray);
+}
+
+.readMore {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--mainBlue);
+  text-decoration: none;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.readMore:hover {
+  color: var(--mainLightGreen);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: var(--mainBlue);
+  color: var(--white);
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: var(--lightGray);
+  cursor: not-allowed;
+  color: var(--mainGray);
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--mainLightGreen);
+}
+
+.pagination span {
+  font-size: 16px;
+  color: var(--mainGray);
+}

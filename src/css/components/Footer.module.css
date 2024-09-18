@@ -1,7 +1,5 @@
-@import './colors.css';
-
 .footer {
-  background-color: var(--dark-pink);
+  background-color: var(--mainDarkBlue);
   color: var(--white);
   font-size: 12px;
   display: flex;
