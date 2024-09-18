@@ -1,6 +1,11 @@
+@import './colors.css';
+
 .footer {
+  background-color: var(--dark-pink);
+  color: var(--white);
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 40px;
 }
